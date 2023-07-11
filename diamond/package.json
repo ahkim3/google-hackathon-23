@@ -1,0 +1,14 @@
+{
+  "name": "diamond",
+  "version": "1.0.0",
+  "description": "Diamond in the Rough",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Kim, Caleb Alexander, Sengdao Inthavong, Sebastian Gluszak",
+  "license": "ISC",
+  "devDependencies": {
+    "hardhat": "^2.16.1"
+  }
+}
