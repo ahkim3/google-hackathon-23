@@ -49,21 +49,21 @@ app.get("/add", function (req, res) {
             addressMessage = stdout.toString();
 
             // Send POST request to AppSheet
-            fetch(
-                "POST  https://api.appsheet.com/api/v2/apps/" +
-                    APP_ID +
-                    "/tables/Contracts/Action?applicationAccessKey=" +
-                    APPLICATION_ACCESS_KEY,
-                {
-                    method: "POST",
-                    body: JSON.stringify({
-                        ContractID: "11",
-                        ManagerID: "sengdaointhavong2024@u.northwestern.edu",
-                        ClientID: "sglus2@illinois.edu",
-                        "Contract Status": "Completed",
-                    }),
-                }
-            );
+            // fetch(
+            //     "POST  https://api.appsheet.com/api/v2/apps/" +
+            //         APP_ID +
+            //         "/tables/Contracts/Action?applicationAccessKey=" +
+            //         APPLICATION_ACCESS_KEY,
+            //     {
+            //         method: "POST",
+            //         body: JSON.stringify({
+            //             ContractID: "11",
+            //             ManagerID: "sengdaointhavong2024@u.northwestern.edu",
+            //             ClientID: "sglus2@illinois.edu",
+            //             "Contract Status": "Completed",
+            //         }),
+            //     }
+            // );
 
             // Send request
             console.log(addressMessage);
