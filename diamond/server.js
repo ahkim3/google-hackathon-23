@@ -26,11 +26,11 @@ app.get("/add", function (req, res) {
     // Run commands
     const child_process = require("child_process");
     const command = "npx hardhat compile";
-    const output = child_process.execSync(command);
+    const output = child_process.exec(command);
     console.log(output);
 
     const command2 = "npx hardhat run scripts/deploy.js --network goerli";
-    const output2 = child_process.execSync(command2);
+    const output2 = child_process.exec(command2);
     console.log(output2);
 
     res.send("GET Request Received");
