@@ -12,7 +12,7 @@ app.get("/add", function (req, res) {
     console.log(req.query.amount);
     console.log(req.query.duration);
 
-    process.env.RECEIVER_ID = req.query.receiverid;
+    process.env.RECEIVER_ID = req.query.receiverid.toString();
     process.env.AMOUNT = req.query.amount;
     process.env.DURATION = req.query.duration;
 
