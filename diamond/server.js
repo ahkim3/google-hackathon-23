@@ -7,6 +7,7 @@ app.get("/", function (req, res) {
 
 app.get("/add", function (req, res) {
     // Store GET params
+    console.log("GET params\n");
     console.log(req.query.receiverid);
     console.log(req.query.amount);
     console.log(req.query.duration);
@@ -14,6 +15,13 @@ app.get("/add", function (req, res) {
     process.env.RECEIVER_ID = req.query.receiverid;
     process.env.AMOUNT = req.query.amount;
     process.env.DURATION = req.query.duration;
+
+    const {API_URL, PRIVATE_KEY, RECIEVER_ID, AMOUNT, DURATION} = process.env;
+
+    console.log("map\n");
+    console.log(RECIEVER_ID);
+    console.log(AMOUNT);
+    console.log(DURATION);
 
     // Run commands
     const child_process = require("child_process");
