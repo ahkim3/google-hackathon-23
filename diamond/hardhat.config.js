@@ -5,7 +5,7 @@
 require('dotenv').config();
 require("@nomiclabs/hardhat-ethers");
 
-const { API_URL, PRIVATE_KEY } = process.env;
+const { API_URL, PRIVATE_KEY, SENDER_ID, RECIEVER_ID, AMOUNT, DURATION } = process.env;
 
 module.exports = {
    solidity: "0.7.3",
