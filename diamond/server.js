@@ -35,10 +35,10 @@ app.get("/add", function (req, res) {
     async function executeCommand(command) {
         try {
             const {stdout, stderr} = await exec(command);
-            console.log(`Standard output: ${stdout}`);
-            console.log(`Standard error: ${stderr}`);
+            console.log(stdout.toString);
+            // console.log(`Standard error: ${stderr}`);
         } catch (error) {
-            console.error(`Yayyyyy: ${stdout}`);
+            // console.error(`Error: ${stdout}`);
         }
     }
 
