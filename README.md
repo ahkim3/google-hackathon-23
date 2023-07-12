@@ -28,7 +28,7 @@
 1. Clone this repo
 2. Enter into `diamond` directory
 3. Run `npm i`
-4. Create a file named `.env` that contains the following information (only fill in the first three variables):
+4. Create a file named `.env` that contains the following information (only fill in the first three and last two variables):
 
     ```
     API_URL = "REPLACE"
@@ -36,8 +36,10 @@
     RECEIVER_ID = "REPLACE"
     AMOUNT = ""
     DURATION = ""
+    APPLICATION_ACCESS_KEY = "REPLACE"
+    APP_ID = "REPLACE"
     ```
 
-    To do this, setup an Alchemy account and create an App. Also, setup a Metamask account that contains some amount of Ether (0.01 ETH to get testing ETH).
+    To do this, setup an Alchemy account and create an App. Also, setup a Metamask account that contains some amount of Ether (0.01 ETH to get testing ETH). For the APPLICATION_ACCESS_KEY and APP_ID, grab that information from AppSheet.
 
 5. Execute `sudo sh -c 'node /path/to/directory/google-hackathon-23/diamond/server.js'`

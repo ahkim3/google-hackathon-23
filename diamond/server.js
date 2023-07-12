@@ -16,8 +16,18 @@ app.get("/add", function (req, res) {
     process.env.RECEIVER_ID = req.query.receiverid.toString();
     process.env.AMOUNT = req.query.amount;
     process.env.DURATION = req.query.duration;
+    process.env.APPLICATION_ACCESS_KEY = req.query.APPLICATION_ACCESS_KEY;
+    process.env.APP_ID = req.query.APP_ID;
 
-    const {API_URL, PRIVATE_KEY, RECEIVER_ID, AMOUNT, DURATION} = process.env;
+    const {
+        API_URL,
+        PRIVATE_KEY,
+        RECEIVER_ID,
+        AMOUNT,
+        DURATION,
+        APPLICATION_ACCESS_KEY,
+        APP_ID,
+    } = process.env;
 
     // console.log("map\n");
     // console.log(RECEIVER_ID);
@@ -36,8 +46,26 @@ app.get("/add", function (req, res) {
     async function executeCommand(command) {
         try {
             const {stdout, stderr} = await exec(command);
-
             addressMessage = stdout.toString();
+
+            // Send POST request to AppSheet
+            fetch(
+                "POST  https://api.appsheet.com/api/v2/apps/" +
+                    APP_ID +
+                    "/tables/Contracts/Action?applicationAccesssKey=" +
+                    APPLICATION_ACCESS_KEY,
+                {
+                    method: "POST",
+                    body: JSON.stringify({
+                        ContractID: "11",
+                        ManagerID: "sengdaointhavong2024@u.northwestern.edu",
+                        ClientID: "sglus2@illinois.edu",
+                        "Contract Status": "Completed",
+                    }),
+                }
+            );
+
+            // Send request
             console.log(addressMessage);
             res.send(addressMessage);
 
