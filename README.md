@@ -1,5 +1,7 @@
 # Diamond in the Rough (Google Hackathon 23)
 
+A no-code tool to quickly create and deploy smart contracts to the blockchain. We used AppSheet, GCP, an Express server, Solidity, and Ethereum to develop our project.
+
 ### Authors:
 
 -   [Andrew Kim](https://www.linkedin.com/in/ahkim3/)
