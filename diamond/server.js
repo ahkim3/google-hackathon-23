@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+let addressMessage = "";
 
 app.get("/", function (req, res) {
     res.send("Hello world!");
@@ -35,7 +36,9 @@ app.get("/add", function (req, res) {
     async function executeCommand(command) {
         try {
             const {stdout, stderr} = await exec(command);
-            console.log(stdout.toString());
+
+            addressMessage = stdout.toString();
+            console.log(addressMessage);
             // console.log(`Standard error: ${stderr}`);
         } catch (error) {
             // console.error(`Error: ${stdout}`);
@@ -45,7 +48,7 @@ app.get("/add", function (req, res) {
     const command2 = "npx hardhat run scripts/deploy.js --network goerli";
     executeCommand(command2);
 
-    res.send("GET Request Received");
+    res.send(addressMessage);
 });
 
 app.listen(80);
