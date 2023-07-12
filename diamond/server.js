@@ -29,11 +29,22 @@ app.get("/add", function (req, res) {
     const output = child_process.exec(command);
     // console.log(output);
 
-    const command2 = "npx hardhat run scripts/deploy.js --network goerli";
-    const output2 = child_process.exec(command2);
-    // console.log(output2);
+    const util = require("util");
+    const exec = util.promisify(child_process.exec);
 
-    console.log("GET Request Received");
+    async function executeCommand(command) {
+        try {
+            const {stdout, stderr} = await exec(command);
+            console.log(`Standard output: ${stdout}`);
+            console.log(`Standard error: ${stderr}`);
+        } catch (error) {
+            console.error(`Yayyyyy: ${stdout}`);
+        }
+    }
+
+    const command2 = "npx hardhat run scripts/deploy.js --network goerli";
+    executeCommand(command2);
+
     res.send("GET Request Received");
 });
 
