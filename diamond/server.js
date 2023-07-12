@@ -13,7 +13,7 @@ app.get("/add", function (req, res) {
 
     // Run batch script
     const child_process = require("child_process");
-    const command = "ls -l";
+    const command = "npx hardhat run scripts/deploy.js --network goerli";
     const output = child_process.execSync(command);
     console.log(output);
 
