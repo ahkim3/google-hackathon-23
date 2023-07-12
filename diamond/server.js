@@ -30,8 +30,18 @@ app.get("/add", function (req, res) {
     // console.log(output);
 
     const command2 = "npx hardhat run scripts/deploy.js --network goerli";
-    const output2 = child_process.exec(command2);
-    console.log(output2.stdout);
+    const childProcess = child_process.exec(
+        command2,
+        (error, stdout, stderr) => {
+            if (error) {
+                console.error(`Error: ${error}`);
+                return;
+            }
+
+            console.log(`Standard output: ${stdout}`);
+            console.log(`Standard error: ${stderr}`);
+        }
+    );
 
     res.send("GET Request Received");
 });
