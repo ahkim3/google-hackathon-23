@@ -7,10 +7,10 @@ app.get("/", function (req, res) {
 
 app.get("/add", function (req, res) {
     // Store GET params
-    console.log("GET params\n");
-    console.log(req.query.receiverid);
-    console.log(req.query.amount);
-    console.log(req.query.duration);
+    // console.log("GET params\n");
+    // console.log(req.query.receiverid);
+    // console.log(req.query.amount);
+    // console.log(req.query.duration);
 
     process.env.RECEIVER_ID = req.query.receiverid.toString();
     process.env.AMOUNT = req.query.amount;
@@ -18,16 +18,16 @@ app.get("/add", function (req, res) {
 
     const {API_URL, PRIVATE_KEY, RECEIVER_ID, AMOUNT, DURATION} = process.env;
 
-    console.log("map\n");
-    console.log(RECEIVER_ID);
-    console.log(AMOUNT);
-    console.log(DURATION);
+    // console.log("map\n");
+    // console.log(RECEIVER_ID);
+    // console.log(AMOUNT);
+    // console.log(DURATION);
 
     // Run commands
     const child_process = require("child_process");
     const command = "npx hardhat compile";
     const output = child_process.exec(command);
-    console.log(output);
+    // console.log(output);
 
     const command2 = "npx hardhat run scripts/deploy.js --network goerli";
     const output2 = child_process.exec(command2);
