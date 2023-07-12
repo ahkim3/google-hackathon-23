@@ -1,9 +1,11 @@
 .architect
+artifacts/
 bootstrap.css
 bootstrap.js
 bootstrap.json
 bootstrap.jsonp
 build/
+cache/
 classic.json
 classic.jsonp
 ext/
