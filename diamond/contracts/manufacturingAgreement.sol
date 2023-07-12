@@ -12,10 +12,6 @@ contract manufacturingAgreement {
    uint private amount;
    uint public startTime;
 
-
-   event failed(string failMessage, uint amount);
-   event succeeded(string succeedMessage, uint amount);
-
    constructor(address payable _receiver, uint _amount, uint _duration) payable {
       require(_receiver != address(0), "receiver = zero address");
       sender = payable(msg.sender);
