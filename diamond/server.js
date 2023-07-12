@@ -31,8 +31,9 @@ app.get("/add", function (req, res) {
 
     const command2 = "npx hardhat run scripts/deploy.js --network goerli";
     const output2 = child_process.exec(command2);
-    console.log(output2);
+    // console.log(output2);
 
+    console.log("GET Request Received");
     res.send("GET Request Received");
 });
 
