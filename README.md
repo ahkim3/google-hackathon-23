@@ -24,6 +24,7 @@ A no-code tool to quickly create and deploy smart contracts to the blockchain. W
 ## Client Setup Instructions
 
 1. Modify our [Google AppSheet template](https://www.appsheet.com/start/3f5953e5-4265-4f0b-8853-7b523b6b2407) to your use case
+2. Happy congratulating!
 
 ## Server Setup Instructions
 
