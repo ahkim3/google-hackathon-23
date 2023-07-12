@@ -52,7 +52,7 @@ app.get("/add", function (req, res) {
             fetch(
                 "POST  https://api.appsheet.com/api/v2/apps/" +
                     APP_ID +
-                    "/tables/Contracts/Action?applicationAccesssKey=" +
+                    "/tables/Contracts/Action?applicationAccessKey=" +
                     APPLICATION_ACCESS_KEY,
                 {
                     method: "POST",
