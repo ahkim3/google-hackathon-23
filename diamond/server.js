@@ -39,16 +39,17 @@ app.get("/add", function (req, res) {
 
             addressMessage = stdout.toString();
             console.log(addressMessage);
+            res.send(addressMessage);
+
             // console.log(`Standard error: ${stderr}`);
         } catch (error) {
             // console.error(`Error: ${stdout}`);
+            res.send("Error");
         }
     }
 
     const command2 = "npx hardhat run scripts/deploy.js --network goerli";
     executeCommand(command2);
-
-    res.send("<p>" + addressMessage + "</p>");
 });
 
 app.listen(80);
