@@ -38,7 +38,7 @@ app.get("/add", function (req, res) {
             console.log(`Standard output: ${stdout}`);
             console.log(`Standard error: ${stderr}`);
         } catch (error) {
-            console.error(`Error: ${error}`);
+            console.error(`Yayyyyy: ${stdout}`);
         }
     }
 
