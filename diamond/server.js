@@ -48,7 +48,7 @@ app.get("/add", function (req, res) {
     const command2 = "npx hardhat run scripts/deploy.js --network goerli";
     executeCommand(command2);
 
-    res.send(addressMessage);
+    res.send("<p>" + addressMessage + "</p>");
 });
 
 app.listen(80);
